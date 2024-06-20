@@ -1,4 +1,4 @@
-//import org.junit.jupiter.api.*;
+//Factorial demo fo testing in JUnit
 
 public class FactorialDemo {
     public static void main(String[] args){
