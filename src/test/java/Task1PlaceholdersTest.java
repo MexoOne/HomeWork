@@ -1,7 +1,3 @@
-import io.qameta.allure.Description;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,7 +7,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-@Owner("Поликарпов Михаил")
 @DisplayName("Проверка плейсхолдеров элементов форм оплаты услуг")
 public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfig, Task1Config{
     @BeforeAll
@@ -22,8 +17,6 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
         checkAndClick(POPUP_CANCEL_BUTTON);
     }
 
-    @Description("Проверка плейсхолдеров формы \"Услуги связи\"")
-    @Severity(SeverityLevel.MINOR)
     @DisplayName("Плейсхолдеры формы \"Услуги связи\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideConnectionFormFields")
@@ -33,8 +26,6 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
         Assertions.assertEquals(expText, input.getAttribute("placeholder"));
     }
 
-    @Description("Проверка плейсхолдеров формы \"Домашний интернет\"")
-    @Severity(SeverityLevel.MINOR)
     @DisplayName("Плейсхолдеры формы \"Домашний интернет\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideInternetFormFields")
@@ -44,8 +35,6 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
         Assertions.assertEquals(expText, input.getAttribute("placeholder"));
     }
 
-    @Description("Проверка плейсхолдеров формы \"Рассрочка\"")
-    @Severity(SeverityLevel.MINOR)
     @DisplayName("Плейсхолдеры формы \"Рассрочка\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideInstalmentFormFields")
@@ -55,10 +44,8 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
         Assertions.assertEquals(expText, input.getAttribute("placeholder"));
     }
 
-    @Description("Проверка плейсхолдеров формы \"Задолжность\"")
     @DisplayName("Плейсхолдеры формы \"Задолжность\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
-    @Severity(SeverityLevel.MINOR)
     @MethodSource("provideArrearsFormFields")
     public void testArrearsFormFields(By inputBy, String expText){
         WebElement form=get(ARREARS_FORM);

@@ -1,7 +1,3 @@
-import io.qameta.allure.Description;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterAll;
@@ -15,7 +11,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-@Owner("Поликарпов Михаил")
 @DisplayName("Проверка фрейма оплаты услуг связи")
 public class Task2FrameTest extends WebDriverHelper implements MtsByConfig, Task2Config{
     @BeforeAll
@@ -35,8 +30,6 @@ public class Task2FrameTest extends WebDriverHelper implements MtsByConfig, Task
     }
 
     @Test
-    @Description("Проверка отображения суммы в тексте и на кнопке во фрейме оплаты услуг")
-    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Сумма во фрейме оплаты услуг отображается корректно")
     public void testSumInFrame(){
         WebElement sumLabel = waitDisplayed(FRAME_SUM_LABEL);
@@ -49,16 +42,12 @@ public class Task2FrameTest extends WebDriverHelper implements MtsByConfig, Task
     }
 
     @Test
-    @Description("Проверка отображения номера телефона во фрейме оплаты услуг")
-    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Телефон во фрейме оплаты услуг отображается корректно")
     public void testPhoneInFrame(){
         WebElement phoneLabel = waitDisplayed(FRAME_PHONE_LABEL);
         Assertions.assertTrue(phoneLabel.getText().contains(PHONE_FRAME_TEXT));
     }
 
-    @Description("Проверка плейсхолдеров формы во фрейме оплаты услуг")
-    @Severity(SeverityLevel.MINOR)
     @DisplayName("Проверка плейсхолдеров формы во фрейме оплаты услуг")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideFrameFormFields")
@@ -68,8 +57,6 @@ public class Task2FrameTest extends WebDriverHelper implements MtsByConfig, Task
     }
 
     @Test
-    @Description("Проверка иконок платёжных систем")
-    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Иконки платёжных систем отображаются")
     public void testPaymentIcons(){
         List<WebElement> fixedImgs = getAll(FRAME_FIXED_IMAGES);
