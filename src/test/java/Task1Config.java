@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 

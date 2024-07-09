@@ -1,6 +1,5 @@
 import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.By;
-
 import java.util.stream.Stream;
 
 public interface Task2Config {

@@ -11,12 +11,14 @@ import java.time.Duration;
 import java.util.List;
 
 public class WebDriverHelper {
+    final static int DEF_TIMEOUT=10;
+
     private static WebDriver driver;
     public static void initDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-http2");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(DEF_TIMEOUT));
     }
 
     public static void quit(){
@@ -42,7 +44,7 @@ public class WebDriverHelper {
     }
 
     public static WebElement waitDisplayed(By by){
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(DEF_TIMEOUT));
         WebElement element = get(by);
         wait.until(d -> element.isDisplayed());
         return element;

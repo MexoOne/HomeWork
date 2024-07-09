@@ -24,7 +24,7 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
 
     @Description("Проверка плейсхолдеров формы \"Услуги связи\"")
     @Severity(SeverityLevel.MINOR)
-    @DisplayName("Проверка плейсхолдеров формы \"Услуги связи\"")
+    @DisplayName("Плейсхолдеры формы \"Услуги связи\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideConnectionFormFields")
     public void testConnectionFormFields(By inputBy, String expText){
@@ -35,7 +35,7 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
 
     @Description("Проверка плейсхолдеров формы \"Домашний интернет\"")
     @Severity(SeverityLevel.MINOR)
-    @DisplayName("Проверка плейсхолдеров формы \"Домашний интернет\"")
+    @DisplayName("Плейсхолдеры формы \"Домашний интернет\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideInternetFormFields")
     public void testInternetFormFields(By inputBy, String expText){
@@ -46,7 +46,7 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
 
     @Description("Проверка плейсхолдеров формы \"Рассрочка\"")
     @Severity(SeverityLevel.MINOR)
-    @DisplayName("Проверка плейсхолдеров формы \"Рассрочка\"")
+    @DisplayName("Плейсхолдеры формы \"Рассрочка\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @MethodSource("provideInstalmentFormFields")
     public void testInstalmentFormFields(By inputBy, String expText){
@@ -56,7 +56,7 @@ public class Task1PlaceholdersTest extends WebDriverHelper implements MtsByConfi
     }
 
     @Description("Проверка плейсхолдеров формы \"Задолжность\"")
-    @DisplayName("Проверка плейсхолдеров формы \"Задолжность\"")
+    @DisplayName("Плейсхолдеры формы \"Задолжность\"")
     @ParameterizedTest(name="Плейсхолдер \"{1}\"")
     @Severity(SeverityLevel.MINOR)
     @MethodSource("provideArrearsFormFields")
